@@ -17,7 +17,7 @@ To help process this data, multiple machine learning models were tested to find 
 
 Documentation: [Exoplanet Data Source](https://www.kaggle.com/nasa/kepler-exoplanet-search-results)
 
-Best Model[KNearestNeighbor](exoplanet_model.sav)
+Best Model: [KNearestNeighbor](exoplanet_model.sav)
 
 
 ## Feature Selection
@@ -34,10 +34,19 @@ The following is the list of features by importance. Features that have err in t
 The final features selected are ```koi_fpflag_co, koi_fpflag_nt, koi_fpflag_ss, koi_model_snr, koi_prad and koi_fpflag_ec``` as they had the highest importance.
 
 
+
 ## Compare Models
+
+Tested GridSearch with C = [1, 5, 10]  and kernel = ('linear', 'rbf'). SVC {'C': 50, 'kernel': 'rbf'} was the best choice with the highest precision identifying False Positives. This model has the following metrics with model accuracy of 0.79
 ![svc](Resources/svc.png)
+
+Tested Decision Tree Classifier resulted in the following metrics. The model accurancy (0.85) is better with the highest precision identifying False Positives.
 ![clf](Resources/clf.png)
+
+The Random Tree Forest was tested with the following metrics. This model's accuracy (0.87) is better than the previous models, again with the highest precision identifying False Positives.
 ![rf](Resources/rf.png)
+
+Finally tested KNearestNeighbors. This resulted in the best model accuracy (0.88) with k=7.
 ![knn](Resources/knn.png)
 
 
