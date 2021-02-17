@@ -4,7 +4,7 @@
 
 ## Table of contents
 * [General Information](#General-Information)
-* [Feature Selection](#Feature Selection)
+* [Feature Selection](#Feature-Selection)
 * [Compare Models](#Compare-Models)
 * [Analysis](#Analysis)
 * [Technologies](#technologies)
@@ -17,7 +17,7 @@ To help process this data, multiple machine learning models were tested to find 
 
 Documentation: [Exoplanet Data Source](https://www.kaggle.com/nasa/kepler-exoplanet-search-results)
 
-[Best Model](exoplanet_model.sav)
+Best Model[KNearestNeighbor](exoplanet_model.sav)
 
 
 ## Feature Selection
