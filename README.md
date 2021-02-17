@@ -23,11 +23,11 @@ Best Model[KNearestNeighbor](exoplanet_model.sav)
 ## Feature Selection
 Determined the best features by using a heatmap comparing all features and RandomForestClassifier model to find the most important features.
 
-The heatmap shows a correlation between the features. Features that are more green are highly correlated and thus not a good option to include in the feature selection.
+The heatmap shows a correlation between the features. Squares that are more green show features that are highly correlated. Including them would increase their importance and skewing the model.
 
 ![HeatMap](Resources/heatmap.png)
 
-The foloowing is the list of features by importance. Features that have err in their name are part of "Uncertainties Column" in the dataset and have been excluded.
+The following is the list of features by importance. Features that have err in their name are part of the "Uncertainties Column" in the dataset. This could be considered to be "margin of error" and have been excluded from the feature selection.
 
 ![feature_importance](Resources/feature_importance.png)
 
