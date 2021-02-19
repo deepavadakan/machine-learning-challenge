@@ -37,7 +37,7 @@ The final features selected are ```koi_fpflag_co, koi_fpflag_nt, koi_fpflag_ss, 
 
 ## Compare Models
 
-Tested GridSearch with C = [1, 5, 10]  and kernel = ('linear', 'rbf'). SVC {'C': 50, 'kernel': 'rbf'} was the best choice with the highest precision identifying False Positives. This model has the following metrics with model accuracy of 0.79
+Used GridSearch to hypertune parameters. Parameters used: C = [1, 5, 10]  and kernel = ('linear', 'rbf'). SVC {'C': 50, 'kernel': 'rbf'} was the best parameter with the highest precision identifying False Positives. This model has the following metrics with model accuracy of 0.79
 ![svc](Resources/svc.png)
 
 Tested Decision Tree Classifier resulted in the following metrics. The model accurancy (0.85) is better with the highest precision identifying False Positives.
@@ -53,6 +53,8 @@ Finally tested KNearestNeighbors. This resulted in the best model accuracy (0.88
 ## Analysis
 
 SVC model with kernel=rbf and C=50 had the lowest accuracy of 0.79. Next came the Decision Tree Classifier model with an accuracy of 0.84. Both KNearestNeighbor and Random Forest Classifier had higher accuracy scores of 0.88 and 0.87 respectively. While the Random Forest Classifier is better suited for disproportionate data, as in the exoplanet data, the KNearestNeighbor gave a slightly better accuracy overall. The False Positive scores for both models are identical, whereas the Candidate and Confirmed scores are slightly better in the KNearestNeighbor model with k=7. Thus the best model for this data set would be KNearestNeighbor.
+
+The KNearestNeighbors model gives an 88% accuracy in determining candidate exoplanets. The features were selected using RandomForestClassifier to find features with the most importance. The heatmap helped narrow down and remove parameters that were highly correlated so as not to give too much importance to similar features. Finally, by going through the documentation provided on the dataset I eliminated features with 'err' assuming that these probaly refer to "Margin of Error". With the help of an astrophysicist, it would be possible to refine the selection of the most important features and end up with a better model.
 
 ## Technologies
 * Python
